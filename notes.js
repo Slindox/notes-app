@@ -31,11 +31,10 @@ const removeNote = function (title) {
   })
   if (notes.length > notesToKeep.length) {
     console.log(success('Removed note!'))
+    saveNotes(notesToKeep)
   } else {
     console.log(error('Title does not exist!'))
   }
-
-  saveNotes(notesToKeep)
 }
 
 const saveNotes = function (notes) {
