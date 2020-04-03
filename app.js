@@ -14,44 +14,51 @@ yargs.command({
     title: {
       describe: 'Note title',
       demandOption: true,
-      type: 'string'
+      type: 'string',
     },
     body: {
       description: 'Body of your note',
       demandOption: true,
-      type: 'string'
-    }
+      type: 'string',
+    },
   },
-  handler: function(argv) {
+  handler: function (argv) {
     notes.addNote(argv.title, argv.body)
-  }
+  },
 })
 
 // Creade rm command
 yargs.command({
   command: 'rm',
   describe: 'Removing a new note',
-  handler: function() {
-    console.log('Removed a new note!')
-  }
+  builder: {
+    title: {
+      describe: 'Title of the note to delete',
+      demandOption: true,
+      type: 'string',
+    },
+  },
+  handler: function (argv) {
+    notes.removeNote(argv.title)
+  },
 })
 
 // Creade read command
 yargs.command({
   command: 'read',
   describe: 'Read a note',
-  handler: function() {
+  handler: function () {
     console.log('Readed note')
-  }
+  },
 })
 
 // Creade ls command
 yargs.command({
   command: 'ls',
   describe: 'List all notes',
-  handler: function() {
+  handler: function () {
     console.log('List all notes')
-  }
+  },
 })
 
 yargs.parse()

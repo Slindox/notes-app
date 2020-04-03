@@ -1,24 +1,49 @@
 const fs = require('fs')
-const getNotes = function() {
+const chalk = require('chalk')
+const success = chalk.bold.green
+const error = chalk.bold.red
+
+const getNotes = function () {
   return 'Your notes...'
 }
 
-const addNote = function(title, body) {
+const addNote = function (title, body) {
   const notes = loadNotes()
-
-  notes.push({
-    title: title,
-    body: body
+  const duplicateNotes = notes.filter(function (note) {
+    return note.title === title
   })
-  saveNotes(notes)
+  if (duplicateNotes.length === 0) {
+    notes.push({
+      title: title,
+      body: body,
+    })
+    saveNotes(notes)
+    console.log(success('New note added!'))
+  } else {
+    console.log(error('Note title taken!'))
+  }
 }
 
-const saveNotes = function(notes) {
+const removeNote = function (title) {
+  const notes = loadNotes()
+  const notesToKeep = notes.filter(function (note) {
+    return note.title !== title
+  })
+  if (notes.length > notesToKeep.length) {
+    console.log(success('Removed note!'))
+  } else {
+    console.log(error('Title does not exist!'))
+  }
+
+  saveNotes(notesToKeep)
+}
+
+const saveNotes = function (notes) {
   const dataJSON = JSON.stringify(notes)
   fs.writeFileSync('notes.json', dataJSON)
 }
 
-const loadNotes = function() {
+const loadNotes = function () {
   try {
     const dataBuffer = fs.readFileSync('notes.json')
     const dataJSON = dataBuffer.toString()
@@ -30,5 +55,6 @@ const loadNotes = function() {
 
 module.exports = {
   getNotes: getNotes,
-  addNote: addNote
+  addNote: addNote,
+  removeNote: removeNote,
 }

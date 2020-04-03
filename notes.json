@@ -1,1 +1,5 @@
-[{"title":"t","body":"b"}]
+[
+  { "title": "A new Hope", "body": "cool body" },
+  { "title": "Empire strikes back", "body": "cool body" },
+  { "title": "Return of the Jediii", "body": "test4" }
+]
