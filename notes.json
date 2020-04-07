@@ -1,1 +1,7 @@
-[{"title":"Return of the Jediii","body":"test4"},{"title":"b","body":"test4"},{"title":"a","body":"test4"},{"title":"ABC","body":"A"},{"title":"Ei","body":"Das ist eine Tolle Notiz"}]
+[
+  { "title": "Return of the Jedi", "body": "test" },
+  { "title": "b", "body": "test" },
+  { "title": "a", "body": "test" },
+  { "title": "ABC", "body": "ABCDE" },
+  { "title": "Apple", "body": "I like apples" }
+]
