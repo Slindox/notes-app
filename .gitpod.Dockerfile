@@ -9,4 +9,3 @@ RUN sudo apt-get -q update &&  sudo apt-get upgrade -y
 RUN sudo rm -rf /var/lib/apt/lists/*
 
 # More information: https://www.gitpod.io/docs/config-docker/
-RUN sudo apt-get install tree -y
