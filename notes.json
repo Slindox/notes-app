@@ -1,7 +1,1 @@
-[
-  { "title": "Return of the Jedi", "body": "test" },
-  { "title": "b", "body": "test" },
-  { "title": "a", "body": "test" },
-  { "title": "ABC", "body": "ABCDE" },
-  { "title": "Apple", "body": "I like apples" }
-]
+[{"title":"Return of the Jedi","body":"test"},{"title":"b","body":"test"},{"title":"a","body":"test"},{"title":"ABC","body":"ABCDE"},{"title":"Apple","body":"I like apples"},{"title":"Ei","body":"Das ist eine Tolle Notiz"}]
